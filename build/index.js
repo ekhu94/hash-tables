@@ -7,4 +7,6 @@ ht.set('mike stoklasa', 'alcoholism');
 ht.set('jay bauman', 'vanity');
 ht.set('jack packard', 'clown');
 ht.set('josh davis', 'wizard');
-console.log(ht.get('jack packard'));
+// console.log(ht.get('jack packard'));
+console.log(ht.keys());
+console.log(ht.values());

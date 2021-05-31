@@ -36,6 +36,26 @@ var HashTable = /** @class */ (function () {
         }
         return undefined;
     };
+    HashTable.prototype.keys = function () {
+        var output = [];
+        var els = this.keyMap.filter(function (el) { return el; });
+        for (var _i = 0, els_1 = els; _i < els_1.length; _i++) {
+            var el = els_1[_i];
+            var keys = el.map(function (arr) { return arr[0]; });
+            output.push.apply(output, keys);
+        }
+        return output.filter(function (key, i) { return output.indexOf(key) === i; });
+    };
+    HashTable.prototype.values = function () {
+        var output = [];
+        var els = this.keyMap.filter(function (el) { return el; });
+        for (var _i = 0, els_2 = els; _i < els_2.length; _i++) {
+            var el = els_2[_i];
+            var vals = el.map(function (arr) { return arr[1]; });
+            output.push.apply(output, vals);
+        }
+        return output.filter(function (val, i) { return output.indexOf(val) === i; });
+    };
     return HashTable;
 }());
 exports.HashTable = HashTable;

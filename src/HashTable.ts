@@ -33,4 +33,28 @@ export class HashTable {
     }
     return undefined;
   }
+
+  keys(): string[] {
+    const output: string[] = [];
+    const els = this.keyMap.filter((el: string[][] | void) => el);
+    for (let el of els) {
+      const keys = el.map((arr: string[]): string => arr[0]);
+      output.push(...keys);
+    }
+    return output.filter(
+      (key: string, i: number): boolean => output.indexOf(key) === i
+    );
+  }
+
+  values(): string[] {
+    const output: string[] = [];
+    const els = this.keyMap.filter((el: string[][] | void) => el);
+    for (let el of els) {
+      const vals = el.map((arr: string[]): string => arr[1]);
+      output.push(...vals);
+    }
+    return output.filter(
+      (val: string, i: number): boolean => output.indexOf(val) === i
+    );
+  }
 }
