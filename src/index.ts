@@ -1,8 +1,7 @@
 import { firstHash } from './firstHash';
 import { secondHash } from './secondHash';
+import { HashTable } from './HashTable';
 
-console.log(firstHash('pink', 11));
-console.log(firstHash('cyan', 11));
+const ht = new HashTable();
 
-console.log(secondHash('pink', 11));
-console.log(secondHash('cyan', 11));
+ht.set('rich evans', 'AIDS');

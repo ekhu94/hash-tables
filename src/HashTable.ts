@@ -1,5 +1,5 @@
 export class HashTable {
-  keyMap: string[][];
+  keyMap: string[][][];
 
   constructor(len = 53) {
     this.keyMap = new Array(len);
@@ -13,5 +13,15 @@ export class HashTable {
       idx = (idx * WEIRD_PRIME + val) % this.keyMap.length;
     }
     return idx;
+  }
+
+  set(key: string, value: string): void {
+    const idx = this._hash(key);
+    if (!this.keyMap[idx]) {
+      this.keyMap[idx] = [[key, value]];
+    } else {
+      this.keyMap[idx] = [...this.keyMap[idx], [key, value]];
+    }
+    console.log(this.keyMap[idx]);
   }
 }
