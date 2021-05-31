@@ -3,3 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var HashTable_1 = require("./HashTable");
 var ht = new HashTable_1.HashTable();
 ht.set('rich evans', 'AIDS');
+ht.set('mike stoklasa', 'alcoholism');
+ht.set('jay bauman', 'vanity');
+ht.set('jack packard', 'clown');
+ht.set('josh davis', 'wizard');
+console.log(ht.keyMap);

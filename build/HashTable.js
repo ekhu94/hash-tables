@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HashTable = void 0;
 var HashTable = /** @class */ (function () {
     function HashTable(len) {
-        if (len === void 0) { len = 53; }
+        if (len === void 0) { len = 11; }
         this.keyMap = new Array(len);
     }
     HashTable.prototype._hash = function (key) {
@@ -23,12 +23,9 @@ var HashTable = /** @class */ (function () {
     HashTable.prototype.set = function (key, value) {
         var idx = this._hash(key);
         if (!this.keyMap[idx]) {
-            this.keyMap[idx] = [[key, value]];
+            this.keyMap[idx] = [];
         }
-        else {
-            this.keyMap[idx] = __spreadArray(__spreadArray([], this.keyMap[idx]), [[key, value]]);
-        }
-        console.log(this.keyMap[idx]);
+        this.keyMap[idx] = __spreadArray(__spreadArray([], this.keyMap[idx]), [[key, value]]);
     };
     return HashTable;
 }());

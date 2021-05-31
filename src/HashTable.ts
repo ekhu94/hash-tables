@@ -1,7 +1,7 @@
 export class HashTable {
   keyMap: string[][][];
 
-  constructor(len = 53) {
+  constructor(len = 11) {
     this.keyMap = new Array(len);
   }
 
@@ -18,10 +18,8 @@ export class HashTable {
   set(key: string, value: string): void {
     const idx = this._hash(key);
     if (!this.keyMap[idx]) {
-      this.keyMap[idx] = [[key, value]];
-    } else {
-      this.keyMap[idx] = [...this.keyMap[idx], [key, value]];
+      this.keyMap[idx] = [];
     }
-    console.log(this.keyMap[idx]);
+    this.keyMap[idx] = [...this.keyMap[idx], [key, value]];
   }
 }
